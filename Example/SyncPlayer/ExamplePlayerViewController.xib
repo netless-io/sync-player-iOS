@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExamplePlayerViewController" customModule="SyncPlayer_Example" customModuleProvider="target">
+            <connections>
+                <outlet property="playerContainer" destination="kLv-cP-aCA" id="HnR-FM-LJs"/>
+                <outlet property="progressViewContainer" destination="HSh-nh-A5D" id="zGa-Q4-1rp"/>
+                <outlet property="rateItemLabel" destination="aWI-kF-bEA" id="vvw-uh-era"/>
+                <outlet property="rateStep" destination="HKb-kH-SYk" id="8ZC-yA-pHJ"/>
+                <outlet property="statusLabel" destination="GiS-iN-QmB" id="Aw8-wK-II8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aom-WO-ikL">
+                    <rect key="frame" x="163" y="62" width="88" height="8"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Dlo-is-89D">
+                        <rect key="frame" x="0.0" y="0.0" width="88" height="8"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="88" id="E8A-o9-h6Q"/>
+                        <constraint firstAttribute="height" constant="8" id="RhA-ZA-Mfl"/>
+                    </constraints>
+                    <blurEffect style="regular"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </visualEffectView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VFs-iD-Xcy">
+                    <rect key="frame" x="16" y="88" width="382" height="808"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLv-cP-aCA">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="676"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HSh-nh-A5D">
+                            <rect key="frame" x="0.0" y="676" width="382" height="44"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Jy0-OI-xBY"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiS-iN-QmB">
+                            <rect key="frame" x="0.0" y="720" width="382" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="5mH-5K-GyM"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="U3t-ny-I3s">
+                            <rect key="frame" x="0.0" y="764" width="382" height="44"/>
+                            <items>
+                                <barButtonItem title="Play" style="plain" id="Iyo-6q-wAu">
+                                    <color key="tintColor" name="systemTealColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="onClickPlay:" destination="-1" id="QNx-Nh-crB"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem title="Pause" style="plain" id="EQ9-iy-5gA">
+                                    <color key="tintColor" name="systemTealColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="onClickPause:" destination="-1" id="ERA-zA-gCe"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem title="Reset" style="plain" id="pkH-47-lIV">
+                                    <color key="tintColor" name="systemTealColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="onReset:" destination="-1" id="rn0-2Z-xpe"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem title="delay" style="plain" id="8QV-l5-lmp">
+                                    <color key="tintColor" name="systemTealColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="onClickDelay:" destination="-1" id="h7I-iU-nE7"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem style="plain" id="5Oo-h4-4hj">
+                                    <stepper key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="HKb-kH-SYk">
+                                        <rect key="frame" x="239" y="6" width="94" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" systemColor="tintColor"/>
+                                        <connections>
+                                            <action selector="rateUpdate:" destination="-1" eventType="valueChanged" id="hnI-0c-T5n"/>
+                                        </connections>
+                                    </stepper>
+                                </barButtonItem>
+                                <barButtonItem title="x1.0" style="plain" id="aWI-kF-bEA">
+                                    <color key="tintColor" name="systemTealColor" catalog="System" colorSpace="catalog"/>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="VFs-iD-Xcy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-16" id="301-cD-HGZ"/>
+                <constraint firstItem="Aom-WO-ikL" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="22" id="6Ui-So-jYz"/>
+                <constraint firstItem="VFs-iD-Xcy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="J71-rA-bD9"/>
+                <constraint firstAttribute="bottom" secondItem="VFs-iD-Xcy" secondAttribute="bottom" id="OQY-wW-ZS8"/>
+                <constraint firstItem="Aom-WO-ikL" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="UYL-6j-EHY"/>
+                <constraint firstItem="VFs-iD-Xcy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="ner-95-1OG"/>
+            </constraints>
+            <point key="canvasLocation" x="-1587" y="17"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

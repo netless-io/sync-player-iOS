@@ -1,0 +1,6 @@
+framework module SyncPlayer {
+  umbrella header "SyncPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

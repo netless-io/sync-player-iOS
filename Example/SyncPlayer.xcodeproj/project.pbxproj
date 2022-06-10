@@ -8,11 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		8A0C7242284D966400A55C14 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0C7241284D966400A55C14 /* Utility.swift */; };
+		8A17281A2848C18A00D796A8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1728192848C18A00D796A8 /* HomeViewController.swift */; };
+		8A17281D2848C50400D796A8 /* ExamplePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A17281B2848C50400D796A8 /* ExamplePlayerViewController.swift */; };
+		8A17281E2848C50400D796A8 /* ExamplePlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A17281C2848C50400D796A8 /* ExamplePlayerViewController.xib */; };
+		8A9A93EE28462544005FF999 /* VideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A93ED28462544005FF999 /* VideoPreviewView.swift */; };
+		8A9A93F028462550005FF999 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9A93EF28462550005FF999 /* VideoPlayerView.swift */; };
+		8ACA373D2844694200B36A20 /* PlayerProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACA373C2844694200B36A20 /* PlayerProgressView.swift */; };
+		8AFBB9372853178700DFC242 /* OCExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AFBB9362853178700DFC242 /* OCExample.m */; };
 		D4127F559014EEF5F258919B /* Pods_SyncPlayer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E509E446464F6FA55E492DB0 /* Pods_SyncPlayer_Tests.framework */; };
 		EAEBF79ACA4ADF89E3DB603E /* Pods_SyncPlayer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FEAF2E7C16F1349279421A /* Pods_SyncPlayer_Example.framework */; };
 /* End PBXBuildFile section */
@@ -33,7 +40,6 @@
 		607FACD01AFB9204008FA782 /* SyncPlayer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyncPlayer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -41,12 +47,22 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		64FEAF2E7C16F1349279421A /* Pods_SyncPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SyncPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9D397448B2D4D7EF03F1C31 /* SyncPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = SyncPlayer.podspec; path = ../SyncPlayer.podspec; sourceTree = "<group>"; };
+		8A0C7241284D966400A55C14 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		8A1728192848C18A00D796A8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8A17281B2848C50400D796A8 /* ExamplePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePlayerViewController.swift; sourceTree = "<group>"; };
+		8A17281C2848C50400D796A8 /* ExamplePlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamplePlayerViewController.xib; sourceTree = "<group>"; };
+		8A9A93ED28462544005FF999 /* VideoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPreviewView.swift; sourceTree = "<group>"; };
+		8A9A93EF28462550005FF999 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		8ACA373C2844694200B36A20 /* PlayerProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProgressView.swift; sourceTree = "<group>"; };
+		8ACA374828485F3B00B36A20 /* SyncPlayer_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SyncPlayer_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		8AFBB9352853178700DFC242 /* OCExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCExample.h; sourceTree = "<group>"; };
+		8AFBB9362853178700DFC242 /* OCExample.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCExample.m; sourceTree = "<group>"; };
+		A9D397448B2D4D7EF03F1C31 /* SyncPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SyncPlayer.podspec; path = ../SyncPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B209E8C68CBBBBAA53942091 /* Pods-SyncPlayer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyncPlayer_Example.debug.xcconfig"; path = "Target Support Files/Pods-SyncPlayer_Example/Pods-SyncPlayer_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		CDE8BE740027A406D4192C0C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		CDE8BE740027A406D4192C0C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E509E446464F6FA55E492DB0 /* Pods_SyncPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SyncPlayer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBB43E129B8D58319806318 /* Pods-SyncPlayer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyncPlayer_Tests.release.xcconfig"; path = "Target Support Files/Pods-SyncPlayer_Tests/Pods-SyncPlayer_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F41E0F8021F9918C6B078F57 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F41E0F8021F9918C6B078F57 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,12 +109,17 @@
 		607FACD21AFB9204008FA782 /* Example for SyncPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				8AFBB93A2853253C00DFC242 /* OC */,
+				8A6AE9602851E67B00EF8FEF /* Views */,
+				8A0C7240284D965900A55C14 /* Utility */,
+				8A17281F2848C51100D796A8 /* Example */,
+				8A1728192848C18A00D796A8 /* HomeViewController.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				8ACA374828485F3B00B36A20 /* SyncPlayer_Example-Bridging-Header.h */,
 			);
 			name = "Example for SyncPlayer";
 			path = SyncPlayer;
@@ -148,6 +169,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8A0C7240284D965900A55C14 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8A0C7241284D966400A55C14 /* Utility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		8A17281F2848C51100D796A8 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				8A17281B2848C50400D796A8 /* ExamplePlayerViewController.swift */,
+				8A17281C2848C50400D796A8 /* ExamplePlayerViewController.xib */,
+			);
+			name = Example;
+			sourceTree = "<group>";
+		};
+		8A6AE9602851E67B00EF8FEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8A9A93EF28462550005FF999 /* VideoPlayerView.swift */,
+				8A9A93ED28462544005FF999 /* VideoPreviewView.swift */,
+				8ACA373C2844694200B36A20 /* PlayerProgressView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8AFBB93A2853253C00DFC242 /* OC */ = {
+			isa = PBXGroup;
+			children = (
+				8AFBB9352853178700DFC242 /* OCExample.h */,
+				8AFBB9362853178700DFC242 /* OCExample.m */,
+			);
+			name = OC;
+			sourceTree = "<group>";
+		};
 		DA19A86F7E6826F84F86105E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +213,6 @@
 				25814E5F514B88E8B1D06C4A /* Pods-SyncPlayer_Tests.debug.xcconfig */,
 				EBBB43E129B8D58319806318 /* Pods-SyncPlayer_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,10 +269,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
+						DevelopmentTeam = L922897LKX;
+						LastSwiftMigration = 1330;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = L922897LKX;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -227,6 +285,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -246,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A17281E2848C50400D796A8 /* ExamplePlayerViewController.xib in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -291,11 +351,19 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SyncPlayer_Example/Pods-SyncPlayer_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NTLBridge/NTLBridge.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SyncPlayer/SyncPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/Whiteboard/Whiteboard.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NTLBridge.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SyncPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whiteboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -331,8 +399,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				8A9A93EE28462544005FF999 /* VideoPreviewView.swift in Sources */,
+				8AFBB9372853178700DFC242 /* OCExample.m in Sources */,
+				8ACA373D2844694200B36A20 /* PlayerProgressView.swift in Sources */,
+				8A17281D2848C50400D796A8 /* ExamplePlayerViewController.swift in Sources */,
+				8A0C7242284D966400A55C14 /* Utility.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				8A17281A2848C18A00D796A8 /* HomeViewController.swift in Sources */,
+				8A9A93F028462550005FF999 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,7 +493,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -465,7 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -478,13 +552,18 @@
 			baseConfigurationReference = B209E8C68CBBBBAA53942091 /* Pods-SyncPlayer_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = L922897LKX;
 				INFOPLIST_FILE = SyncPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SyncPlayer/SyncPlayer_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -493,13 +572,17 @@
 			baseConfigurationReference = 31D24EF6AC935B8F044A436D /* Pods-SyncPlayer_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = L922897LKX;
 				INFOPLIST_FILE = SyncPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SyncPlayer/SyncPlayer_Example-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -507,6 +590,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 25814E5F514B88E8B1D06C4A /* Pods-SyncPlayer_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = L922897LKX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -529,6 +613,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EBBB43E129B8D58319806318 /* Pods-SyncPlayer_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = L922897LKX;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",

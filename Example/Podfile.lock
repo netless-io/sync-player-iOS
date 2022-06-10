@@ -1,0 +1,60 @@
+PODS:
+  - NTLBridge (3.1.2)
+  - SnapKit (5.6.0)
+  - SyncPlayer (0.1.0)
+  - Whiteboard (2.16.24):
+    - Whiteboard/Whiteboard-YYModel (= 2.16.24)
+  - Whiteboard/Base (2.16.24):
+    - NTLBridge (~> 3.1.2)
+    - Whiteboard/Object
+  - Whiteboard/Converter (2.16.24):
+    - Whiteboard/Object
+  - Whiteboard/Model (2.16.24):
+    - YYModel
+  - Whiteboard/NativeReplayer (2.16.24):
+    - Whiteboard/Replayer
+  - Whiteboard/Object (2.16.24):
+    - Whiteboard/Model
+  - Whiteboard/Replayer (2.16.24):
+    - Whiteboard/Base
+  - Whiteboard/Resource (2.16.24)
+  - Whiteboard/Room (2.16.24):
+    - Whiteboard/Base
+  - Whiteboard/SyncPlayer (2.16.24):
+    - SyncPlayer
+    - Whiteboard/Replayer
+  - Whiteboard/Whiteboard-YYModel (2.16.24):
+    - Whiteboard/Converter
+    - Whiteboard/NativeReplayer
+    - Whiteboard/Resource
+    - Whiteboard/Room
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - SnapKit
+  - SyncPlayer (from `../`)
+  - Whiteboard (from `/Users/xuyunshi/Desktop/Whiteboard/Whiteboard-iOS`)
+  - Whiteboard/SyncPlayer (from `/Users/xuyunshi/Desktop/Whiteboard/Whiteboard-iOS`)
+
+SPEC REPOS:
+  trunk:
+    - NTLBridge
+    - SnapKit
+    - YYModel
+
+EXTERNAL SOURCES:
+  SyncPlayer:
+    :path: "../"
+  Whiteboard:
+    :path: "/Users/xuyunshi/Desktop/Whiteboard/Whiteboard-iOS"
+
+SPEC CHECKSUMS:
+  NTLBridge: b3433dc0dbe85c803e92a742328dc3119e331ed3
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SyncPlayer: 946ceedb687c3f2b8fdd2558edae76f3b6568eee
+  Whiteboard: 1bb054aa0ec9db5598912978a11b0b5fe7208ffb
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: a8dbacdd81cc79c89e60d951bf94e96e2271f6fd
+
+COCOAPODS: 1.11.3

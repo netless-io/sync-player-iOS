@@ -1,13 +1,18 @@
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'SyncPlayer_Example' do
   pod 'SyncPlayer', :path => '../'
+  pod 'SnapKit'
 
+  pod 'Whiteboard', :git => 'https://www.github.com/netless-io/Whiteboard-iOS'
+  pod 'Whiteboard/SyncPlayer', :git => 'https://www.github.com/netless-io/Whiteboard-iOS'
+  
   target 'SyncPlayer_Tests' do
     inherit! :search_paths
 
     
   end
 end
+
