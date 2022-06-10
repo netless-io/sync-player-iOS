@@ -1,29 +1,31 @@
 # SyncPlayer
 
-[![CI Status](https://img.shields.io/travis/xuyunshi/SyncPlayer.svg?style=flat)](https://travis-ci.org/xuyunshi/SyncPlayer)
-[![Version](https://img.shields.io/cocoapods/v/SyncPlayer.svg?style=flat)](https://cocoapods.org/pods/SyncPlayer)
 [![License](https://img.shields.io/cocoapods/l/SyncPlayer.svg?style=flat)](https://cocoapods.org/pods/SyncPlayer)
-[![Platform](https://img.shields.io/cocoapods/p/SyncPlayer.svg?style=flat)](https://cocoapods.org/pods/SyncPlayer)
 
-## Example
+<img src="./example.gif"></img>
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## 简介
+支持同时播放任意多个播放源的 iOS 协同播放器。
 
-## Requirements
+可以任意设置单条视频源的偏移 (offset) ，节选 (selection) 。
 
-## Installation
+目前已支持iOS系统播放器 `AVPlayer` 、Netless白板回放 `WhiteReplayer` 。
 
-SyncPlayer is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+支持自定义视频播放器的接入，只需遵循 `AtomPlayer` 协议 。
+
+## 安装
+cocoapods
 
 ```ruby
 pod 'SyncPlayer'
 ```
 
-## Author
+## 使用方式
+请在 example 中查看
 
-xuyunshi, 405029644@qq.com
+## 注意
+offset 和 selection 每个视频源建议只操作一次。
 
-## License
+对同一视频多次操作的情况暂不在考虑内。
 
-SyncPlayer is available under the MIT license. See the LICENSE file for more info.
+offset只能为正数
