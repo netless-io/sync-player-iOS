@@ -1,7 +1,5 @@
 # SyncPlayer
 
-[![License](https://img.shields.io/cocoapods/l/SyncPlayer.svg?style=flat)](https://cocoapods.org/pods/SyncPlayer)
-
 <img src="./example.gif"></img>
 
 ## 简介
@@ -22,6 +20,17 @@ pod 'SyncPlayer'
 
 ## 使用方式
 请在 example 中查看
+
+## 视频处理
+### Offset
+在视频开始前，插入一段指定时长的空白内容。
+
+`AtomPlayer` 调用 `offset(time:CMTime)` 方法即可生成一个带 Offset 的 `AtomPlayer`。
+
+### Selection
+节选视频的片段，只有节选片段中内容会被播放。
+
+`AtomPlayer` 调用 `selection(ranges:[CMTimeRange])` 方法即可生成一个带 Selection 的 `AtomPlayer`。
 
 ## 注意
 offset 和 selection 每个视频源建议只操作一次。
