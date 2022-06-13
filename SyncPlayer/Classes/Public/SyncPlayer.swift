@@ -17,6 +17,9 @@ public class SyncPlayer: NSObject {
     
     // MARK: - Public
     
+    @objc
+    public var status: AtomPlayStatus { player.atomStatus }
+    
     /// Indicates the current difference tolerance between different videos.
     /// Default is 0.5 seconds.
     @objc
