@@ -33,8 +33,8 @@ PODS:
 DEPENDENCIES:
   - SnapKit
   - SyncPlayer (from `../`)
-  - Whiteboard (from `/Users/xuyunshi/Desktop/Whiteboard/Whiteboard-iOS`)
-  - Whiteboard/SyncPlayer (from `/Users/xuyunshi/Desktop/Whiteboard/Whiteboard-iOS`)
+  - Whiteboard (from `https://www.github.com/netless-io/Whiteboard-iOS`)
+  - Whiteboard/SyncPlayer (from `https://www.github.com/netless-io/Whiteboard-iOS`)
 
 SPEC REPOS:
   trunk:
@@ -46,7 +46,12 @@ EXTERNAL SOURCES:
   SyncPlayer:
     :path: "../"
   Whiteboard:
-    :path: "/Users/xuyunshi/Desktop/Whiteboard/Whiteboard-iOS"
+    :git: https://www.github.com/netless-io/Whiteboard-iOS
+
+CHECKOUT OPTIONS:
+  Whiteboard:
+    :commit: 16551c18e15e6945cd6c70e41daa4fa1dc1cb3fb
+    :git: https://www.github.com/netless-io/Whiteboard-iOS
 
 SPEC CHECKSUMS:
   NTLBridge: b3433dc0dbe85c803e92a742328dc3119e331ed3
@@ -55,6 +60,6 @@ SPEC CHECKSUMS:
   Whiteboard: 1bb054aa0ec9db5598912978a11b0b5fe7208ffb
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: a8dbacdd81cc79c89e60d951bf94e96e2271f6fd
+PODFILE CHECKSUM: 16f07117bf2f1725c83f935251357a3a50c40fbd
 
 COCOAPODS: 1.11.3
