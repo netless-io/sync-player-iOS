@@ -1,53 +1,85 @@
 {
   "images" : [
     {
+      "filename" : "iPadNotifications-20@2x.png",
       "idiom" : "iphone",
-      "size" : "20x20",
-      "scale" : "2x"
+      "scale" : "2x",
+      "size" : "20x20"
     },
     {
+      "filename" : "iPhoneNotifications-20@3x.png",
       "idiom" : "iphone",
-      "size" : "20x20",
-      "scale" : "3x"
+      "scale" : "3x",
+      "size" : "20x20"
     },
     {
+      "filename" : "iPadSetting-29.png",
       "idiom" : "iphone",
-      "size" : "29x29",
-      "scale" : "2x"
+      "scale" : "1x",
+      "size" : "29x29"
     },
     {
+      "filename" : "iPadSetting-29@2x.png",
       "idiom" : "iphone",
-      "size" : "29x29",
-      "scale" : "3x"
+      "scale" : "2x",
+      "size" : "29x29"
     },
     {
+      "filename" : "iPhoneSetting-29@3x.png",
       "idiom" : "iphone",
-      "size" : "40x40",
-      "scale" : "2x"
+      "scale" : "3x",
+      "size" : "29x29"
     },
     {
+      "filename" : "iPadSpotlight-40@2x.png",
       "idiom" : "iphone",
-      "size" : "40x40",
-      "scale" : "3x"
+      "scale" : "2x",
+      "size" : "40x40"
     },
     {
+      "filename" : "iPhoneSpotlight-40@3x.png",
       "idiom" : "iphone",
-      "size" : "60x60",
-      "scale" : "2x"
+      "scale" : "3x",
+      "size" : "40x40"
     },
     {
+      "filename" : "iPhoneApp-57.png",
       "idiom" : "iphone",
-      "size" : "60x60",
-      "scale" : "3x"
+      "scale" : "1x",
+      "size" : "57x57"
+    },
+    {
+      "filename" : "iPhoneApp-57@2x.png",
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "57x57"
+    },
+    {
+      "filename" : "iPhoneApp-60@2x.png",
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "size" : "60x60"
+    },
+    {
+      "filename" : "iPhoneApp-60@3x.png",
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "size" : "60x60"
     },
     {
       "idiom" : "ios-marketing",
-      "size" : "1024x1024",
-      "scale" : "1x"
+      "scale" : "1x",
+      "size" : "1024x1024"
+    },
+    {
+      "filename" : "icon.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "512x512"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
