@@ -1,3 +1,4 @@
+
 # outpath
 OUTPATH=$1
 SCHEME=SyncPlayer_Tests
@@ -8,8 +9,9 @@ xcodebuild \
   -sdk iphonesimulator \
   -destination "platform=iOS Simulator,name=$device" \
   test | xcbeautify > $OUTPATH
+  TEST_TAIL=$(tail -n 2 $OUTPATH)
+
   PASSSTR='Test Succeeded'
-  TEST_TAIL=$(tail -n 1 $OUTPATH)
   ISPASS=$(echo $TEST_TAIL | grep "${PASSSTR}")
   if [[ "$ISPASS" != "" ]]
   then
