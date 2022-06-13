@@ -1,0 +1,27 @@
+name: Test
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: iOS Test
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: brew install xcbeautify
+      - name: Test
+        run: |
+          sh test.sh test_out
+      - name: Upload artifacts On Fail
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: test_out.log
+          path: test_out
+
