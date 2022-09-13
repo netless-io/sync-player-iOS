@@ -161,7 +161,7 @@ class OffsetPlayer: AtomPlayer {
     }
 
     func atomCurrentTime() -> CMTime {
-        guard didSetupFakeVideo else { return kCMTimeZero }
+        guard didSetupFakeVideo else { return .zero }
         return isCurrentInFake ? fakePlayer.atomCurrentTime() : realPlayer.atomCurrentTime() + offset
     }
 
@@ -170,7 +170,7 @@ class OffsetPlayer: AtomPlayer {
         if time.isValid {
             return time + offset
         }
-        return kCMTimeInvalid
+        return .invalid
     }
 
     func atomSeek(time: CMTime) {
@@ -227,7 +227,7 @@ fileprivate func generateEmptyVideo(time: CMTime, completionHandler: @escaping (
     let adaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: input)
     writer.add(input)
     writer.startWriting()
-    writer.startSession(atSourceTime: kCMTimeZero)
+    writer.startSession(atSourceTime: .zero)
     var pixelBuffer: CVPixelBuffer?
     let pixelCreateReturn = CVPixelBufferCreate(kCFAllocatorDefault,
                                                 640,

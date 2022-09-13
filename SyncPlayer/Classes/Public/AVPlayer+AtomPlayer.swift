@@ -162,7 +162,7 @@ extension AVPlayer: AtomPlayer {
     }
     
     public func atomDuration() -> CMTime {
-        currentItem?.duration ?? kCMTimeInvalid
+        currentItem?.duration ?? .invalid
     }
     
     public func atomSeek(time: CMTime, _ completionHandler: @escaping ((Bool) -> Void)) {

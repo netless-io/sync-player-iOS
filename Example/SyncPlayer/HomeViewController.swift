@@ -55,7 +55,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func onWhiteVideos(_ sender: Any) {
-        let activity = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        let activity = UIActivityIndicatorView(style: .white)
         activity.startAnimating()
         view.addSubview(activity)
         activity.snp.makeConstraints {

@@ -16,7 +16,7 @@ class SelectionPlayer: AtomPlayer {
         self.atomStatus = realPlayer.atomStatus
         self.realPlayer = realPlayer
         self.ranges = ranges
-        totalTime = ranges.reduce(into: kCMTimeZero) { partialResult, range in
+        totalTime = ranges.reduce(into: .zero) { partialResult, range in
             partialResult = partialResult + range.duration
         }
     }
@@ -43,7 +43,7 @@ class SelectionPlayer: AtomPlayer {
     
     func rangeInfoFor(selectionTime: CMTime) -> (rangeIndex: Int, realOffset: CMTime)? {
         for index in ranges.indices {
-            let lastDurationTime = (0..<index).map { ranges[$0].duration }.reduce(kCMTimeZero, +)
+            let lastDurationTime = (0..<index).map { ranges[$0].duration }.reduce(.zero, +)
             let meet = selectionTime >= lastDurationTime && selectionTime < lastDurationTime + ranges[index].duration
             if meet {
                 return (index, ranges[index].start + selectionTime - lastDurationTime)
@@ -68,19 +68,19 @@ class SelectionPlayer: AtomPlayer {
         }
         
         if let index = ranges.firstIndex(where: { $0.containsTime(realTime)}) {
-            let lastTotal = (0..<index).map { ranges[$0].duration }.reduce(kCMTimeZero, +)
+            let lastTotal = (0..<index).map { ranges[$0].duration }.reduce(.zero, +)
             return .range(index: index, selectionTime: lastTotal + realTime - ranges[index].start)
         }
         
         if let index = ranges.lastIndex(where: { $0.end < realTime }) {
-            let lastTotal = (0...index).map { ranges[$0].duration }.reduce(kCMTimeZero, +)
+            let lastTotal = (0...index).map { ranges[$0].duration }.reduce(.zero, +)
             let isLastIndex = index == ranges.count - 1
             if isLastIndex {
                 return .lastRange(index: index, selectionTime: lastTotal)
             }
             let next = ranges[index + 1]
             let delta = realTime - next.start
-            if delta > kCMTimeZero {
+            if delta > .zero {
                 return .lastRange(index: index, selectionTime: lastTotal + delta)
             } else {
                 // In valid range
@@ -111,7 +111,7 @@ class SelectionPlayer: AtomPlayer {
     @objc
     func onProgressCheck() {
         func seekToRangeStart(index: Int) {
-            let start = (0..<index).map { ranges[$0].duration }.reduce(kCMTimeZero, +)
+            let start = (0..<index).map { ranges[$0].duration }.reduce(.zero, +)
             atomSeek(time: start)
         }
         
@@ -141,7 +141,7 @@ class SelectionPlayer: AtomPlayer {
     }
     
     func atomSetup() {
-        RunLoop.current.add(timer, forMode: .commonModes)
+        RunLoop.current.add(timer, forMode: .common)
         pauseTimer()
         realPlayer.addStatusListener { [weak self] status in
             self?.atomStatus = status
@@ -177,7 +177,7 @@ class SelectionPlayer: AtomPlayer {
         case .lastRange(_, selectionTime: let lastRangeSelectionTime):
             return lastRangeSelectionTime
         case .invalidInfo, .beforeFirstRange:
-            return kCMTimeZero
+            return .zero
         }
     }
     

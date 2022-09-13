@@ -76,7 +76,7 @@ class ClusterPlayer: AtomPlayer {
             .map { $0.atomCurrentTime() }
         guard let min = playingPlayersCurrentTime.min(),
               let max = playingPlayersCurrentTime.max()
-        else { return .init(minTime: kCMTimeZero, maxTime: kCMTimeZero, delta: kCMTimeZero)}
+        else { return .init(minTime: .zero, maxTime: .zero, delta: .zero)}
         return SyncInfo(minTime: min, maxTime: max, delta: max - min)
     }
     
@@ -207,7 +207,7 @@ class ClusterPlayer: AtomPlayer {
         let a = aPlayer.atomDuration()
         let b = bPlayer.atomDuration()
         guard a.isValid, b.isValid
-        else { return kCMTimeInvalid }
+        else { return .invalid }
         return max(a, b)
     }
     

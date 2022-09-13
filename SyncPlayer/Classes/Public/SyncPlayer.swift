@@ -104,7 +104,7 @@ public class SyncPlayer: NSObject {
         let id = UUID().uuidString
         let timer = Timer(timeInterval: interval.seconds, target: self, selector: #selector(onPeriodicTimeObserver(timer:)), userInfo: ["uuid": id], repeats: true)
         timer.fireDate = Date()
-        RunLoop.current.add(timer, forMode: .commonModes)
+        RunLoop.current.add(timer, forMode: .common)
         periodicTimeObserver[id] = (queue ?? .main, block)
         return id
     }
@@ -160,7 +160,7 @@ public class SyncPlayer: NSObject {
     }
     
     func initSyncTimer() {
-        RunLoop.current.add(timer, forMode: .commonModes)
+        RunLoop.current.add(timer, forMode: .common)
         pauseSyncTimer()
         player.addStatusListener { [weak self] status in
             switch status {
