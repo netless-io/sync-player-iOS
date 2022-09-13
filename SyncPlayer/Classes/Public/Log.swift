@@ -12,7 +12,7 @@ public var showLog = false
 
 /// Use this to trigger log open or not When using OC.
 @objc
-public class Log: NSObject {
+public class SyncplayerLog: NSObject {
     @objc
     public func set(log: Bool) {
         showLog = log
