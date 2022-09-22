@@ -11,12 +11,23 @@ private var atomStatusKey: String?
 private var atomListenersKey: String?
 private var atomRateKey: String?
 private var atomAddObserverKey: String?
+private var durationKey: String?
 private let statusKey = "status"
 private let bufferKeepUpKey = "playbackLikelyToKeepUp"
 private let bufferFullKey = "playbackBufferFull"
 private let bufferEmptyKey = "playbackBufferEmpty"
 
 extension AVPlayer: AtomPlayer {
+    // Load duration only once to satisfy some broken m3u8 file
+    fileprivate var _duration: CMTime {
+        get {
+            (objc_getAssociatedObject(self, &durationKey) as? CMTime) ?? .invalid
+        }
+        set {
+            objc_setAssociatedObject(self, &durationKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+    }
+    
     public var atomPlaybackRate: Float {
         get {
             (objc_getAssociatedObject(self, &atomRateKey) as? Float) ?? 1
@@ -90,7 +101,11 @@ extension AVPlayer: AtomPlayer {
     
     func addObserve(item: AVPlayerItem) {
         NotificationCenter.default.addObserver(self, selector: #selector(respondToPlayToEnd(_:)), name: .AVPlayerItemDidPlayToEndTime, object: nil)
-        
+        let loadingItem = item
+        item.asset.loadValuesAsynchronously(forKeys: ["duration"]) { [weak self] in
+            guard let self = self, loadingItem === self.currentItem else { return }
+            self._duration = loadingItem.duration
+        }
         item.addObserver(self, forKeyPath: statusKey, context: nil)
         item.addObserver(self, forKeyPath: bufferKeepUpKey, context: nil)
         item.addObserver(self, forKeyPath: bufferFullKey, context: nil)
@@ -98,6 +113,7 @@ extension AVPlayer: AtomPlayer {
     }
     
     func remove(for item: AVPlayerItem) {
+        _duration = .invalid
         item.removeObserver(self, forKeyPath: statusKey)
         item.removeObserver(self, forKeyPath: bufferKeepUpKey)
         item.removeObserver(self, forKeyPath: bufferFullKey)
@@ -162,7 +178,7 @@ extension AVPlayer: AtomPlayer {
     }
     
     public func atomDuration() -> CMTime {
-        currentItem?.duration ?? .invalid
+        _duration
     }
     
     public func atomSeek(time: CMTime, _ completionHandler: @escaping ((Bool) -> Void)) {
