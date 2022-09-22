@@ -12,12 +12,22 @@ private var atomListenersKey: String?
 private var atomRateKey: String?
 private var atomAddObserverKey: String?
 private var durationKey: String?
+private var endingBoundaryObserverKey: String?
 private let statusKey = "status"
 private let bufferKeepUpKey = "playbackLikelyToKeepUp"
 private let bufferFullKey = "playbackBufferFull"
 private let bufferEmptyKey = "playbackBufferEmpty"
 
 extension AVPlayer: AtomPlayer {
+    fileprivate var _endingObserver: Any? {
+        get {
+            objc_getAssociatedObject(self, &endingBoundaryObserverKey)
+        }
+        set {
+            objc_setAssociatedObject(self, &endingBoundaryObserverKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
     // Load duration only once to satisfy some broken m3u8 file
     fileprivate var _duration: CMTime {
         get {
@@ -96,6 +106,7 @@ extension AVPlayer: AtomPlayer {
     func respondToPlayToEnd(_ notification: Notification) {
         let obj = notification.object as AnyObject
         guard obj === currentItem else { return }
+        rate = 0
         atomStatus = .ended
     }
     
@@ -105,6 +116,10 @@ extension AVPlayer: AtomPlayer {
         item.asset.loadValuesAsynchronously(forKeys: ["duration"]) { [weak self] in
             guard let self = self, loadingItem === self.currentItem else { return }
             self._duration = loadingItem.duration
+            self._endingObserver = self.addBoundaryTimeObserver(forTimes: [NSValue(time: loadingItem.duration)], queue: nil) { [weak self] in
+                let notification = Notification(name: .AVPlayerItemDidPlayToEndTime, object: loadingItem)
+                self?.respondToPlayToEnd(notification)
+            }
         }
         item.addObserver(self, forKeyPath: statusKey, context: nil)
         item.addObserver(self, forKeyPath: bufferKeepUpKey, context: nil)
@@ -114,6 +129,7 @@ extension AVPlayer: AtomPlayer {
     
     func remove(for item: AVPlayerItem) {
         _duration = .invalid
+        _endingObserver = nil
         item.removeObserver(self, forKeyPath: statusKey)
         item.removeObserver(self, forKeyPath: bufferKeepUpKey)
         item.removeObserver(self, forKeyPath: bufferFullKey)
