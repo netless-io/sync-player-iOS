@@ -10,6 +10,7 @@ import Foundation
 /// A cancelable listener class.
 @objc
 public class AnyAtomListener: NSObject, AtomListener {
+    @objc
     public init(cancelCallBack: @escaping (() -> Void)) {
         self.cancelCallBack = cancelCallBack
     }
