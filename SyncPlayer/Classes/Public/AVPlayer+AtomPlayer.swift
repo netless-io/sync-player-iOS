@@ -115,7 +115,7 @@ extension AVPlayer: AtomPlayer {
         let loadingItem = item
         item.asset.loadValuesAsynchronously(forKeys: ["duration"]) { [weak self] in
             guard let self = self, loadingItem === self.currentItem else { return }
-            self._duration = loadingItem.duration
+            self._duration = loadingItem.asset.duration
             self._endingObserver = self.addBoundaryTimeObserver(forTimes: [NSValue(time: loadingItem.duration)], queue: nil) { [weak self] in
                 let notification = Notification(name: .AVPlayerItemDidPlayToEndTime, object: loadingItem)
                 self?.respondToPlayToEnd(notification)
